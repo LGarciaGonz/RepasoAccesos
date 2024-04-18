@@ -1,0 +1,34 @@
+DROP DATABASE IF EXISTS jardineria;
+CREATE DATABASE jardineria CHARACTER SET utf8mb4;
+USE jardineria;
+
+CREATE TABLE gama_producto (
+                               gama VARCHAR(50) NOT NULL UNIQUE,
+                               descripcion_texto TEXT,
+                               PRIMARY KEY (gama)
+);
+
+CREATE TABLE cliente (
+                         codigo INTEGER NOT NULL AUTO_INCREMENT,
+                         nombre VARCHAR(50) NOT NULL,
+                         apellido VARCHAR(30) DEFAULT NULL,
+                         telefono VARCHAR(15) NOT NULL,
+                         PRIMARY KEY (codigo)
+);
+
+CREATE TABLE pedido (
+                        codigo_pedido INTEGER NOT NULL AUTO_INCREMENT,
+                        fecha_pedido date NOT NULL,
+                        codigo_cliente INTEGER NOT NULL,
+                        PRIMARY KEY (codigo_pedido),
+                        FOREIGN KEY (codigo_cliente) REFERENCES cliente (codigo)
+);
+
+CREATE TABLE producto (
+                          codigo_producto VARCHAR(15) NOT NULL unique,
+                          nombre VARCHAR(70) NOT NULL UNIQUE,
+                          gama VARCHAR(50) NOT NULL,
+                          precio_venta NUMERIC(15,2) NOT NULL,
+                          PRIMARY KEY (codigo_producto),
+                          FOREIGN KEY (gama) REFERENCES gama_producto (gama)
+);

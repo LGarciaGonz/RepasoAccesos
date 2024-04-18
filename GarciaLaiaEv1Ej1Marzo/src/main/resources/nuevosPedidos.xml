@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pedidos>
+    <pedido>
+        <total>25.7</total>
+        <fecha>2023-10-05</fecha>
+        <cliente>4</cliente>
+        <comercial>4</comercial>
+    </pedido>
+    <pedido>
+        <total>250.5</total>
+        <fecha>2025-10-05</fecha>
+        <cliente>8</cliente>
+        <comercial>8</comercial>
+    </pedido>
+    <pedido>
+        <total>25.7</total>
+        <fecha>2023-10-05</fecha>
+        <cliente>5</cliente>
+        <comercial>9</comercial>
+    </pedido>
+</pedidos>
